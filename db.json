@@ -10,7 +10,7 @@
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
+      "likes": 12
     },
     {
       "id": 3,
@@ -47,6 +47,24 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "SpongeBob",
+      "image": "https://images.homedepot-static.com/productImages/56646be9-e0d2-4b79-89f5-1f2d57473847/svn/boardwalk-sponges-scouring-pads-bwkcs2-64_1000.jpg",
+      "likes": 0,
+      "id": 9
+    },
+    {
+      "name": "sdvfsf",
+      "image": "sfsdfsf",
+      "likes": 0,
+      "id": 10
+    },
+    {
+      "name": "rgsdgdsg",
+      "image": "dfgsdfgdfgds",
+      "likes": 0,
+      "id": 11
     }
   ]
 }
