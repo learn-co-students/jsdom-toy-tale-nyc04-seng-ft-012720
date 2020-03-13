@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#new-toy-btn")
   const toyForm = document.querySelector(".container")
   const newToyForm = document.querySelector(".add-toy-form")
+
+
   fetch("http://localhost:3000/toys")
        .then(response => response.json())
        .then(actualToyData => {
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             image: event.target["image"].value,
             likes: 0
             }
-    //   debugger
+
       fetch("http://localhost:3000/toys", {
              method: "POST",
              headers: {
@@ -62,7 +64,27 @@ document.addEventListener("DOMContentLoaded", () => {
       <button data-action="like" class="like-btn">❤️</button>
     `
     toyList.append(cardDiv)
+    const likeBtn = cardDiv.querySelector(".like-btn")
+      likeBtn.addEventListener("click", updateLikes)
   }
+
+  function updateLikes(event) {
+      event.preventDefault()
+    let likeP = parseInt(event.target.previousElementSibling.textContent) + 1
+
+    fetch(`http://localhost:3000/toys/${event.target.parentElement.dataset.id}`, {
+     method: "PATCH",
+     headers: {
+       "Content-Type": "application/json",
+       "Accept": "application/json"
+              },
+     body: JSON.stringify({ "likes": likeP })
+    })
+    .then(res => res.json())
+    .then((like => {
+        event.target.previousElementSibling.textContent = `${likeP} likes`
+    }))
+}
 
 })
 
