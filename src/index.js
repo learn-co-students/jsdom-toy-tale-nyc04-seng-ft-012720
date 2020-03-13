@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#new-toy-btn")
   const toyForm = document.querySelector(".container")
   const newToyForm = document.querySelector(".add-toy-form")
-
-
+  
   fetch("http://localhost:3000/toys")
        .then(response => response.json())
        .then(actualToyData => {
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
             image: event.target["image"].value,
             likes: 0
             }
-
+    //   debugger
       fetch("http://localhost:3000/toys", {
              method: "POST",
              headers: {
@@ -49,8 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => response.json())
             .then(actualNewToy => {
                  console.log(actualNewToy)
-                 debugger
-                 renderOneToy(actualNewToy)
+                //  debugger
+                 let toyAdd = renderOneToy(actualNewToy)
+                toyList.append(toyAdd)
             })
   }
   function renderOneToy(toyObj) {
