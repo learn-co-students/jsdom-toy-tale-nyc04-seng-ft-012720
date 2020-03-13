@@ -47,10 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
              })
             .then(response => response.json())
             .then(actualNewToy => {
-                 console.log(actualNewToy)
-                //  debugger
-                 let toyAdd = renderOneToy(actualNewToy)
-                toyList.append(toyAdd)
+                //  console.log(actualNewToy)
+                 /*let toyAdd*/  renderOneToy(actualNewToy)
+                // toyList.append(toyAdd)
             })
   }
   function renderOneToy(toyObj) {
